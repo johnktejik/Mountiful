@@ -1,0 +1,20 @@
+<Bindings>
+	<!--Binding name="MOUNTIFULBIND1"  description="Same as /mount Smart" header="MOUNTIFULHDR"-->
+	<Binding name="CLICK Mountiful:LeftButton"  description="Same as /mount Smart" header="MOUNTIFULHDR">
+		--Mountiful_Command("smart", false);
+		--Mountiful:Click()  --trying to use the new secure button
+	</Binding>
+	<Binding name="MOUNTIFULBIND2"  description="Same as /mount Smart pre">
+		Mountiful_Command("smart pre", false);
+		--Mountiful:Click()  --trying to use the new secure button
+	</Binding>
+	<Binding name="MOUNTIFULBIND3"  description="Same as /mount FastGround">
+		Mountiful_Command("FastGround", false);
+	</Binding>
+	<Binding name="MOUNTIFULBIND4"  description="Same as /mount FastFlying">
+		Mountiful_Command("FastFlying", false);
+	</Binding>
+	<Binding name="MOUNTIFULBIND5"  description="Same as /pet Pet">
+		Mountiful_Command("Pet", true);
+	</Binding>
+</Bindings>

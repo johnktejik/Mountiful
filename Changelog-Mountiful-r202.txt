@@ -1,0 +1,71 @@
+------------------------------------------------------------------------
+r202 | daxdax | 2010-10-31 03:50:25 +0000 (Sun, 31 Oct 2010) | 2 lines
+Changed paths:
+   M /trunk/Mountiful.lua
+   M /trunk/Mountiful.toc
+
+Mountiful:
+- corrected the Toc.  Tested the seahorse in Vashjir
+------------------------------------------------------------------------
+r201 | daxdax | 2010-10-31 02:37:39 +0000 (Sun, 31 Oct 2010) | 2 lines
+Changed paths:
+   M /trunk/Mountiful.lua
+   M /trunk/Mountiful.xml
+
+Mountiful:
+- Yey!  Learning mode all unkinked, should be golden!
+------------------------------------------------------------------------
+r200 | daxdax | 2010-10-30 01:48:06 +0000 (Sat, 30 Oct 2010) | 2 lines
+Changed paths:
+   M /trunk/Mountiful.lua
+   M /trunk/Mountiful.xml
+
+Mountiful:
+- created a 'learning mode' to figure out what all the speeds of the mounts are.  then when everything is learned, the old functionality kicks in :)
+------------------------------------------------------------------------
+r199 | daxdax | 2010-10-27 00:56:56 +0000 (Wed, 27 Oct 2010) | 2 lines
+Changed paths:
+   M /trunk/Mountiful.lua
+   M /trunk/Mountiful.xml
+
+Mountiful:
+- fixed a few bugs
+------------------------------------------------------------------------
+r198 | daxdax | 2010-10-24 21:49:47 +0000 (Sun, 24 Oct 2010) | 2 lines
+Changed paths:
+   M /trunk/Mountiful.lua
+
+Mountiful:
+- not perfect, but it will do for now
+------------------------------------------------------------------------
+r197 | daxdax | 2010-10-03 02:23:38 +0000 (Sun, 03 Oct 2010) | 2 lines
+Changed paths:
+   M /trunk/Mountiful.lua
+
+Mountiful:
+- cataclysm beta
+------------------------------------------------------------------------
+r196 | daxdax | 2010-09-30 18:22:48 +0000 (Thu, 30 Sep 2010) | 2 lines
+Changed paths:
+   M /trunk/Mountiful.xml
+
+Mountiful:
+- cataclysm beta
+------------------------------------------------------------------------
+r195 | daxdax | 2010-09-30 18:22:34 +0000 (Thu, 30 Sep 2010) | 2 lines
+Changed paths:
+   M /trunk/Mountiful.lua
+
+Mountiful:
+- cataclysm beta
+------------------------------------------------------------------------
+r194 | daxdax | 2010-09-29 03:42:06 +0000 (Wed, 29 Sep 2010) | 2 lines
+Changed paths:
+   M /trunk/Mountiful.toc
+   M /trunk/Mountiful.xml
+   A /trunk/textures
+   A /trunk/textures/icon-config.tga
+
+Mountiful:
+- cataclysm beta
+------------------------------------------------------------------------

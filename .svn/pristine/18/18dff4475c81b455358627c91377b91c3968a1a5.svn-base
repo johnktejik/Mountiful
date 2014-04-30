@@ -1,0 +1,18 @@
+## Interface: 50000
+## Title: Mountiful
+## Notes: A Mount and Companion manager
+## Author: Jomar, DaxDax
+## Version: @project-version@
+## SavedVariablesPerCharacter: Mountiful_Vars,MOdebug
+## X-Curse-Packaged-Version: r202
+## X-Curse-Project-Name: Mountiful
+## X-Curse-Project-ID: mountiful
+## X-Curse-Repository-ID: wow/mountiful/mainline
+
+localization_enUs.lua
+localization_deDE.lua
+localization_ruRU.lua
+localization_frFR.lua
+localization_koKR.lua
+Mountiful.xml
+Mountiful.lua

@@ -1,0 +1,323 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+	<Script file="Mountiful.lua"/>
+	<!--********************** Templates **********************-->
+	
+	<Frame name="MountifulIcon" virtual="true" hidden="false">
+		<Size>
+			<AbsDimension x="50" y="80"/>
+		</Size>
+
+		
+		<Anchors>
+			<Anchor point="TOPLEFT">
+				<Offset>
+					<AbsDimension x="20" y="-25"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<!--Button name="$parent_MountIcon" inherits="ItemButtonTemplate"-->  <!--change this to "SecureActionButtonTemplate"  and add the code from the original itembutton template-->
+			<Button name="$parent_MountIcon" inherits="SecureActionButtonTemplate">  
+				<Size>
+					<AbsDimension x="37" y="37"/>
+				</Size>
+				
+			
+				<NormalTexture name="$parentNormalTexture" file="Interface\Buttons\UI-Quickslot2">
+					<Size>
+						<AbsDimension x="64" y="64"/>
+					</Size>
+					<Anchors>
+						<Anchor point="CENTER">
+							<Offset>
+								<AbsDimension x="0" y="-1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<!--PushedTexture file="Interface\Buttons\UI-Quickslot-Depress"/-->
+				<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+				
+				
+				
+		
+				<Anchors>
+					<Anchor point="TOPLEFT"></Anchor>
+				</Anchors>
+				<PushedTexture file=""/>
+				<Layers>
+					<Layer level="BORDER">
+						<Texture name="$parentIconTexture"/>
+						<FontString name="$parentCount" inherits="NumberFontNormal" justifyH="RIGHT" hidden="true">
+							<Anchors>
+								<Anchor point="BOTTOMRIGHT">
+									<Offset>
+										<AbsDimension x="-5" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentStock" inherits="NumberFontNormalYellow" justifyH="LEFT" hidden="true">
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset>
+										<AbsDimension x="0" y="-2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+					<Layer level="BACKGROUND">
+						<Texture name="$parent_IconTexture">
+							<Size>
+								<AbsDimension x="38" y="38"/>
+							</Size>
+							<Anchors>
+								<Anchor point="CENTER">
+									<Offset>
+										<AbsDimension x="0" y="-1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Button>
+			<CheckButton name="$parent_CheckButton" inherits="UICheckButtonTemplate" checked="false">
+				<Size>
+					<AbsDimension x="25" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parent_MountIcon" relativePoint="BOTTOM">
+						<Offset>
+							<AbsDimension x="0" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				
+			</CheckButton>
+		</Frames>
+	</Frame>
+	<Frame name="RightPane_Template" virtual="true">
+		<Size>
+			<AbsDimension x="320" y="385"/>
+		</Size>
+		<Layers>
+				<Layer level="ARTWORK">
+					<!--FontString name="$parent_Name" inherits="RightPaneName_Font"/-->
+					<FontString name="$parent_Name" inherits="GameFontNormal" justifyH="CENTER" justifyV="MIDDLE">
+						<Anchors>
+							<Anchor point="TOP">
+								<Offset>
+									<AbsDimension y="-5" x="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</FontString>
+				</Layer>
+			</Layers>
+		<Anchors>
+			<Anchor point="LEFT" relativeTo="$parent_LeftPane" relativePoint="RIGHT">
+				<Offset>
+					<AbsDimension x="10" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+			<EdgeSize>
+				<AbsValue val="16"/>
+			</EdgeSize>
+		</Backdrop>
+		<Frames>
+			<Button name="$parent_PrevPage">
+				<Size>
+					<AbsDimension x="32" y="32"/>
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="10" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				
+				<NormalTexture file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Up"/>
+				<PushedTexture file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Down"/>
+				<DisabledTexture file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Disabled"/>
+				<HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
+			</Button>
+			<Button name="$parent_NextPage">
+				<Size>
+					<AbsDimension x="32" y="32"/>
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="-10" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				
+				<NormalTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Up"/>
+				<PushedTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Down"/>
+				<DisabledTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Disabled"/>
+				<HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
+			</Button>
+		</Frames>
+	</Frame>
+	<!--********************** Options Panel **********************-->
+	<Frame name="MountifulFrame" toplevel="true" parent="UIParent" movable="true" hidden="true">
+		<Scripts>
+			<OnLoad>Mountiful_OnLoad();</OnLoad>
+			<OnEvent>Mountiful_OnEvent(this,event,...);</OnEvent>
+		</Scripts>
+		<Size>
+			<AbsDimension x="500" y="425"/>
+		</Size>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="Mountiful_Frame_Title" inherits="GameFontNormalLarge" text="Mountiful - " justifyH="CENTER" justifyV="MIDDLE">
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension y="-10" x="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Anchors>
+			<Anchor point="CENTER"/>
+		</Anchors>
+		<Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<EdgeSize>
+				<AbsValue val="16"/>
+			</EdgeSize>
+			<TileSize>
+				<AbsValue val="32"/>
+			</TileSize>
+			<BackgroundInsets>
+				<AbsInset left="5" right="5" top="5" bottom="5"/>
+			</BackgroundInsets>
+		</Backdrop>
+		<Frames>
+			<Frame name="$parent_LeftPane">
+				<Size>
+					<AbsDimension x="150" y="360"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT">
+						<Offset>
+							<AbsDimension y="-10" x="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+					<EdgeSize>
+						<AbsValue val="16"/>
+					</EdgeSize>
+				</Backdrop>
+				<Frames>
+					<Button name="$parent_addpetcategory" inherits="UIPanelButtonTemplate" text="New Pet">
+						<Size>
+							<AbsDimension x="70" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT"/>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								Mountiful_AddNewPetPanel()
+							</OnClick>
+							<OnEnter>
+								GameTooltip:SetOwner(self)
+								GameTooltip:SetText("Create a custom Category for companions")
+								GameTooltip:Show();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide()</OnLeave>
+						</Scripts>
+					</Button>
+					<Button name="$parent_addmountcategory" inherits="UIPanelButtonTemplate" text="New Mount">
+						<Size>
+							<AbsDimension x="80" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="BOTTOMRIGHT" relativePoint="TOPRIGHT"/>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								Mountiful_AddNewMountPanel()
+							</OnClick>
+							<OnEnter>
+								GameTooltip:SetOwner(self)
+								GameTooltip:SetText("Create a custom category for mounts")
+								GameTooltip:Show();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide()</OnLeave>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<Button name="$parent_Close" inherits="UIPanelCloseButton">
+				<Anchors>
+					<Anchor point="TOPRIGHT"/>
+				</Anchors>
+				<Scripts>
+					<OnClick>MountifulFrame:Hide();</OnClick>
+				
+					<OnLeave>GameTooltip:Hide()</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="$parent_Options">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parent_Close" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="5" y="-7"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Size>
+					<AbsDimension x="22" y="22"/>
+				</Size>
+				<NormalTexture file="Interface\Addons\Mountiful\textures\icon-config"/>
+				<HighlightTexture file="Interface\Addons\Mountiful\textures\icon-config" alphaMode="ADD"/>
+					
+				
+				<Scripts>
+					<OnClick>InterfaceOptionsFrame_OpenToCategory("Mountiful");</OnClick>
+
+					<OnLeave>GameTooltip:Hide()</OnLeave>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+	<Button name="Mountiful" inherits="SecureActionButtonTemplate" parent="UIParent" frameStrata="LOW" hidden="false">
+		<!--Attributes>
+			<Attribute name="type" type="string" value="macro"/>
+		</Attributes-->
+		<Scripts>
+			<PreClick>
+				Mountiful_PreClick(self)
+			</PreClick>
+			<PostClick>
+				Mountiful_PostClick(self)
+			</PostClick>
+		</Scripts>    
+	</Button>
+	<Button name="mountiful" inherits="SecureActionButtonTemplate" parent="UIParent" frameStrata="LOW" hidden="false">
+		<!--Attributes>
+			<Attribute name="type" type="string" value="macro"/>
+		</Attributes-->
+		<Scripts>
+			<PreClick>
+				Mountiful_PreClick(self)
+			</PreClick>
+			<PostClick>
+				Mountiful_PostClick(self)
+			</PostClick>
+		</Scripts>    
+	</Button>
+	
+	
+</Ui>
